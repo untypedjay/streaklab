@@ -47,7 +47,6 @@ export default function Exercise({ children, triggerNext }: Props) {
 
   useEffect(() => {
     if (currentReps.length && currentWeight.length) {
-      console.log(currentReps, currentWeight);
       triggerNext();
       setCurrentReps("");
       setCurrentWeight("");

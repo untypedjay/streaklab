@@ -56,8 +56,18 @@ export default function Workout({ children }: Props) {
       alert("Congratulations. You finished this workout!");
       history.push("/");
     }
-    navigator.vibrate(1000);
-    sound.play();
+
+    if (navigator.vibrate) navigator.vibrate(1000);
+
+    const playedPromise = sound.play();
+    if (playedPromise) {
+      playedPromise.catch((e) => {
+        if (e.name === "NotAllowedError" || e.name === "NotSupportedError") {
+          console.error(e.name);
+        }
+      });
+    }
+
     setExerciseNumber(exerciseNumber + 1);
   };
 
