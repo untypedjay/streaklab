@@ -12,6 +12,17 @@ const StyledBreak = styled.div`
   color: white;
 `;
 
+const StyledHeading = styled.h3`
+  text-transform: uppercase;
+  font-size: 2rem;
+  margin-bottom: 0;
+`;
+
+const StyledNextExercise = styled.p`
+  text-transform: uppercase;
+  margin-bottom: 0;
+`;
+
 interface Props {
   timeInSeconds: number;
   nextExercise: ExerciseType;
@@ -25,10 +36,10 @@ export default function Break({
 }: Props) {
   return (
     <StyledBreak>
-      <h3>Break</h3>
+      <StyledHeading>Break</StyledHeading>
       <Timer onTimerExpired={() => triggerNext()}>{timeInSeconds}</Timer>
       <p>Next:</p>
-      <p>{nextExercise.name}</p>
+      <StyledNextExercise>{nextExercise.name}</StyledNextExercise>
       <p>{nextExercise.instance}</p>
     </StyledBreak>
   );

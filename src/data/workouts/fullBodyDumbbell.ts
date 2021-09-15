@@ -2,7 +2,7 @@ import { ExerciseType } from "../../App";
 
 export const fullBodyDumbbell: ExerciseType[] = [
   {
-    name: "Seilspringen",
+    name: "Jumping Rope",
     instance: "Warm Up",
     timeInSeconds: 20,
   },
@@ -12,32 +12,32 @@ export const fullBodyDumbbell: ExerciseType[] = [
     timeInSeconds: 20,
   },
   {
-    name: "Am Stand laufen und Arme kreisen (Vorne/hinten)",
+    name: "Running on the stand and circling arms (front/back)",
     instance: "Warm Up",
     timeInSeconds: 20,
   },
   {
-    name: "Schultern kreisen",
+    name: "Circle Shoulder",
     instance: "Warm Up",
     timeInSeconds: 20,
   },
   {
-    name: "Körper nach links und rechts drehen",
+    name: "Turn Body to the Left and Right",
     instance: "Warm Up",
     timeInSeconds: 20,
   },
   {
-    name: "Beine Kreisen (links, rechts, je vorne und hinten",
+    name: "Legs Circles",
     instance: "Warm Up",
     timeInSeconds: 20,
   },
   {
-    name: "Knie kreisen",
+    name: "Knee Circles",
     instance: "Warm Up",
     timeInSeconds: 20,
   },
   {
-    name: "Handgelenk und Fußgelenk kreisen",
+    name: "Wrist and Ankle Circles",
     instance: "Warm Up",
     timeInSeconds: 20,
   },

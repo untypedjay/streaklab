@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ExerciseType } from "../../App";
 import { round } from "../../utils/common";
 import Break from "../Break/Break";
@@ -12,14 +12,31 @@ const StyledWorkout = styled.div`
   flex-direction: column;
 `;
 
-const StyledButton = styled.button`
+const buttonStyles = css`
+  background: transparent;
+  border: 0;
+  color: white;
+  font-size: 40px;
+  padding: 0.2em;
+`;
+
+const StyledQuitButton = styled.button`
+  ${buttonStyles}
+  position: absolute;
+`;
+
+const StyledNavigationButton = styled.button`
+  ${buttonStyles}
+`;
+
+const StyledNavigation = styled.div`
   position: absolute;
   right: 0;
 `;
 
 const StyledProgressBar = styled.div`
   position: absolute;
-  bottom: 60px;
+  left: 40px;
 `;
 
 interface Props {
@@ -30,12 +47,17 @@ export default function Workout({ children }: Props) {
   const [exerciseNumber, setExerciseNumber] = useState(0);
 
   const history = useHistory();
+  const sound = new Audio(
+    "http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3"
+  );
 
   const triggerNext = () => {
     if (exerciseNumber + 1 === children.length) {
       alert("Congratulations. You finished this workout!");
       history.push("/");
     }
+    navigator.vibrate(1000);
+    sound.play();
     setExerciseNumber(exerciseNumber + 1);
   };
 
@@ -50,7 +72,20 @@ export default function Workout({ children }: Props) {
 
   return (
     <StyledWorkout>
-      <StyledButton onClick={() => quitWorkout()}>X</StyledButton>
+      <StyledQuitButton onClick={() => quitWorkout()}>X</StyledQuitButton>
+      <StyledProgressBar>
+        {round(((exerciseNumber + 1) / children.length) * 100, 0)}%
+      </StyledProgressBar>
+      <StyledNavigation>
+        <StyledNavigationButton
+          onClick={() => setExerciseNumber(exerciseNumber - 1)}
+        >
+          &lt;-
+        </StyledNavigationButton>
+        <StyledNavigationButton onClick={() => triggerNext()}>
+          -&gt;
+        </StyledNavigationButton>
+      </StyledNavigation>
       {children[exerciseNumber].name === "Break" ? (
         <Break
           timeInSeconds={children[exerciseNumber].timeInSeconds || 20}
@@ -62,10 +97,6 @@ export default function Workout({ children }: Props) {
           {children[exerciseNumber]}
         </Exercise>
       )}
-
-      <StyledProgressBar>
-        {round(((exerciseNumber + 1) / children.length) * 100, 0)}%
-      </StyledProgressBar>
     </StyledWorkout>
   );
 }

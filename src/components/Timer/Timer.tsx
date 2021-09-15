@@ -1,4 +1,11 @@
 import { useEffect, useState } from "react";
+import styled from "styled-components";
+
+const StyledTimer = styled.div`
+  font-size: 7rem;
+  font-weight: bold;
+  padding: 0.5em;
+`;
 
 interface Props {
   children: number;
@@ -21,5 +28,5 @@ export default function Timer({ children, onTimerExpired }: Props) {
     return () => clearInterval(interval);
   }, [children, onTimerExpired, timeLeft]);
 
-  return <div>{timeLeft}</div>;
+  return <StyledTimer>{timeLeft}</StyledTimer>;
 }
