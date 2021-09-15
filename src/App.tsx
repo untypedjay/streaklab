@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Workout from "./components/Workout/Workout";
 import { fullBodyDumbbell } from "./data/workouts/fullBodyDumbbell";
@@ -13,7 +13,7 @@ export type ExerciseType = {
 
 export default function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Switch>
         <Route exact path="/" component={Home} />
         <Route exact path="/workouts/0">
@@ -21,6 +21,6 @@ export default function App() {
         </Route>
         <Route component={Home} />
       </Switch>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
