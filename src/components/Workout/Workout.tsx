@@ -32,7 +32,6 @@ export default function Workout({ children }: Props) {
   const history = useHistory();
 
   const triggerNext = () => {
-    console.log("triggered");
     if (exerciseNumber + 1 === children.length) {
       alert("Congratulations. You finished this workout!");
       history.push("/");
@@ -48,9 +47,6 @@ export default function Workout({ children }: Props) {
       history.push("/");
     }
   };
-
-  console.log(exerciseNumber);
-  console.log(children.length);
 
   return (
     <StyledWorkout>
