@@ -1,9 +1,26 @@
 import { useState } from "react";
 import { useHistory } from "react-router-dom";
+import styled from "styled-components";
 import { ExerciseType } from "../../App";
 import { round } from "../../utils/common";
 import Break from "../Break/Break";
 import Exercise from "../Exercise/Exercise";
+
+const StyledWorkout = styled.div`
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledButton = styled.button`
+  position: absolute;
+  right: 0;
+`;
+
+const StyledProgressBar = styled.div`
+  position: absolute;
+  bottom: 60px;
+`;
 
 interface Props {
   children: ExerciseType[];
@@ -32,9 +49,12 @@ export default function Workout({ children }: Props) {
     }
   };
 
+  console.log(exerciseNumber);
+  console.log(children.length);
+
   return (
-    <>
-      <button onClick={() => quitWorkout()}>X</button>
+    <StyledWorkout>
+      <StyledButton onClick={() => quitWorkout()}>X</StyledButton>
       {children[exerciseNumber].name === "Break" ? (
         <Break
           timeInSeconds={children[exerciseNumber].timeInSeconds || 20}
@@ -47,7 +67,9 @@ export default function Workout({ children }: Props) {
         </Exercise>
       )}
 
-      <div>{round((exerciseNumber + 1 / children.length) * 100)}%</div>
-    </>
+      <StyledProgressBar>
+        {round(((exerciseNumber + 1) / children.length) * 100, 0)}%
+      </StyledProgressBar>
+    </StyledWorkout>
   );
 }
