@@ -3,7 +3,7 @@ import styled from "styled-components";
 import { ExerciseType } from "../../App";
 import Timer from "../Timer/Timer";
 
-const StyledExercise = styled.div`
+const StyledExercise = styled.button`
   background-color: #fe4042;
   color: white;
   height: 100%;
@@ -11,6 +11,7 @@ const StyledExercise = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  border: none;
 `;
 
 const StyledExerciseName = styled.h3`
@@ -30,7 +31,7 @@ export default function Exercise({ children, triggerNext }: Props) {
   const [currentWeight, setCurrentWeight] = useState(children.suggestedWeight);
 
   return (
-    <StyledExercise>
+    <StyledExercise onClick={triggerNext}>
       <StyledExerciseName>{children.name}</StyledExerciseName>
       <p>{children.instance}</p>
       {children.timeInSeconds ? (

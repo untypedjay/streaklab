@@ -17,7 +17,7 @@ function useLocalStorage(key: string, initialValue: any) {
         value instanceof Function ? value(storedValue) : value;
       setStoredValue(valueToStore);
       window.localStorage.setItem(key, JSON.stringify(valueToStore));
-    } catch (error) {
+    } catch (error: any) {
       throw new Error(error);
     }
   };
