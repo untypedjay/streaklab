@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { FaArrowLeft, FaArrowRight, FaTimes } from "react-icons/fa";
 import { useHistory } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { ExerciseType } from "../../App";
@@ -18,7 +19,7 @@ const buttonStyles = css`
   border: 0;
   color: white;
   font-size: 40px;
-  padding: 0.2em;
+  padding: 0.2em; 
 `;
 
 const StyledQuitButton = styled.button`
@@ -86,7 +87,7 @@ export default function Workout({ children }: Props) {
 
   return (
     <StyledWorkout>
-      <StyledQuitButton onClick={() => quitWorkout()}>X</StyledQuitButton>
+      <StyledQuitButton onClick={() => quitWorkout()}><FaTimes/></StyledQuitButton>
       <StyledProgressBar>
         {round(((exerciseNumber + 1) / children.length) * 100, 0)}%
       </StyledProgressBar>
@@ -94,10 +95,10 @@ export default function Workout({ children }: Props) {
         <StyledNavigationButton
           onClick={() => setExerciseNumber(exerciseNumber - 1)}
         >
-          &lt;-
+          <FaArrowLeft/>
         </StyledNavigationButton>
         <StyledNavigationButton onClick={() => triggerNext()}>
-          -&gt;
+          <FaArrowRight/>
         </StyledNavigationButton>
       </StyledNavigation>
       {children[exerciseNumber].name === "Break" ? (
