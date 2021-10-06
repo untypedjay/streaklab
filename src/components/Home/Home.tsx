@@ -7,6 +7,10 @@ const StyledSettingsButton = styled.button`
   right: 0;
 `;
 
+const StyledImage = styled.img`
+  display: none;
+`;
+
 interface Props {
   showVisitors?: boolean;
 }
@@ -23,8 +27,9 @@ export default function Home({ showVisitors = false }: Props) {
         <p>60 min</p>
       </button>
 
-      { showVisitors &&
-        <img src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg" alt="Visitors"/>
+      { showVisitors ?
+        <img src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg" alt="Visitors"/> :
+        <StyledImage src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg" alt="Visitors" />
       }
     </>
   );
