@@ -17,6 +17,9 @@ export default function App() {
     <HashRouter>
       <Switch>
         <Route exact path="/" component={Home} />
+        <Route exact path="/visitors">
+          <Home showVisitors />
+        </Route>
         <Route exact path="/workouts/0">
           <Workout>{fullBodyDumbbell}</Workout>
         </Route>

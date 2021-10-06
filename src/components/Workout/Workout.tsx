@@ -2,6 +2,7 @@ import { useState } from "react";
 import { useHistory } from "react-router-dom";
 import styled, { css } from "styled-components";
 import { ExerciseType } from "../../App";
+import useLocalStorage from "../../hooks/useLocalStorage";
 import { round } from "../../utils/common";
 import Break from "../Break/Break";
 import Exercise from "../Exercise/Exercise";
@@ -45,6 +46,7 @@ interface Props {
 
 export default function Workout({ children }: Props) {
   const [exerciseNumber, setExerciseNumber] = useState(0);
+  const [shouldPlaySound] = useLocalStorage('sound', true)
 
   const history = useHistory();
   const sound = new Audio(
@@ -57,16 +59,18 @@ export default function Workout({ children }: Props) {
       history.push("/");
     }
 
-    if (navigator.vibrate) navigator.vibrate(1000);
-
-    const playedPromise = sound.play();
-    if (playedPromise) {
-      playedPromise.catch((e) => {
-        if (e.name === "NotAllowedError" || e.name === "NotSupportedError") {
-          console.error(e.name);
-        }
-      });
+    if (shouldPlaySound) {
+      const playedPromise = sound.play();
+      if (playedPromise) {
+        playedPromise.catch((e) => {
+          if (e.name === "NotAllowedError" || e.name === "NotSupportedError") {
+            console.error(e.name);
+          }
+        });
+      }
     }
+
+    if (navigator.vibrate) navigator.vibrate(1000);
 
     setExerciseNumber(exerciseNumber + 1);
   };

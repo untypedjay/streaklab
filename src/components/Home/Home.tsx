@@ -7,8 +7,13 @@ const StyledSettingsButton = styled.button`
   right: 0;
 `;
 
-export default function Home() {
+interface Props {
+  showVisitors?: boolean;
+}
+
+export default function Home({ showVisitors = false }: Props) {
   const history = useHistory();
+  
   return (
     <>
       <StyledSettingsButton onClick={() => history.push("/settings")}><FaCog /></StyledSettingsButton>
@@ -17,6 +22,10 @@ export default function Home() {
         <h3>Full Body Dumbbell</h3>
         <p>60 min</p>
       </button>
+
+      { showVisitors &&
+        <img src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg" alt="Visitors"/>
+      }
     </>
   );
 }
