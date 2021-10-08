@@ -42,24 +42,28 @@ const StyledProgressBar = styled.div`
 `;
 
 interface Props {
+  addCompletedWorkout: (workout: ExerciseType[]) => void;
   children: ExerciseType[];
 }
 
-export default function Workout({ children }: Props) {
+export default function Workout({ addCompletedWorkout, children }: Props) {
   const [exerciseNumber, setExerciseNumber] = useState(0);
   const [shouldPlaySound] = useLocalStorage('sound', true)
+  const [progress, setProgress] = useState<ExerciseType[]>([]);
 
   const history = useHistory();
   const sound = new Audio(
     "http://codeskulptor-demos.commondatastorage.googleapis.com/descent/gotitem.mp3"
   );
 
-  const triggerNext = () => {
+  const triggerNext = (completedExercise: ExerciseType = children[exerciseNumber]) => {
+
     if (exerciseNumber + 1 === children.length) {
-      alert("Congratulations. You finished this workout!");
-      history.push("/");
+      completeWorkout(progress.concat(completedExercise));
     }
 
+    setProgress(progress.concat(completedExercise));
+    
     if (shouldPlaySound) {
       const playedPromise = sound.play();
       if (playedPromise) {
@@ -75,6 +79,12 @@ export default function Workout({ children }: Props) {
 
     setExerciseNumber(exerciseNumber + 1);
   };
+
+  const completeWorkout = (completedWorkout: ExerciseType[]) => {
+    alert("Congratulations. You finished this workout!");
+    history.push("/");
+    addCompletedWorkout(completedWorkout);
+  }
 
   const quitWorkout = () => {
     const shouldQuit = window.confirm(

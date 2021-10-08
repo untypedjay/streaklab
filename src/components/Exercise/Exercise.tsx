@@ -23,15 +23,28 @@ const StyledExerciseName = styled.h3`
 
 interface Props {
   children: ExerciseType;
-  triggerNext: () => void;
+  triggerNext: (exercise?: ExerciseType) => void;
 }
 
 export default function Exercise({ children, triggerNext }: Props) {
   const [currentReps, setCurrentReps] = useState(children.suggestedReps);
   const [currentWeight, setCurrentWeight] = useState(children.suggestedWeight);
 
+  const completeExercise = () => {
+    let exercise = children;
+    if (exercise.suggestedReps) {
+      exercise.suggestedReps = currentReps;
+    }
+
+    if (exercise.suggestedWeight) {
+      exercise.suggestedWeight = currentWeight;
+    }
+
+    triggerNext(exercise);
+  }
+
   return (
-    <StyledExercise onClick={triggerNext}>
+    <StyledExercise onClick={completeExercise}>
       <StyledExerciseName>{children.name}</StyledExerciseName>
       <p>{children.instance}</p>
       {children.timeInSeconds ? (
