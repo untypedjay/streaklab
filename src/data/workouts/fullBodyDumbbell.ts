@@ -48,8 +48,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Goblet Squats",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -58,8 +58,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Goblet Squats",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -68,8 +68,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Goblet Squats",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -78,8 +78,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Romanian Deadlift",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -88,8 +88,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Romanian Deadlift",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -98,8 +98,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Romanian Deadlift",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -108,7 +108,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Push Ups",
     instance: "Set 1",
-    suggestedReps: 10,
+    suggestedReps: 6,
   },
   {
     name: "Break",
@@ -117,7 +117,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Push Ups",
     instance: "Set 2",
-    suggestedReps: 10,
+    suggestedReps: 6,
   },
   {
     name: "Break",
@@ -126,7 +126,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Push Ups",
     instance: "Set 3",
-    suggestedReps: 10,
+    suggestedReps: 6,
   },
   {
     name: "Break",
@@ -135,7 +135,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Advanced Military Press",
     instance: "Set 1",
-    suggestedReps: 10,
+    suggestedReps: 6,
   },
   {
     name: "Break",
@@ -144,7 +144,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Advanced Military Press",
     instance: "Set 2",
-    suggestedReps: 10,
+    suggestedReps: 6,
   },
   {
     name: "Break",
@@ -153,7 +153,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Advanced Military Press",
     instance: "Set 3",
-    suggestedReps: 10,
+    suggestedReps: 6,
   },
   {
     name: "Break",
@@ -162,8 +162,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Close Bench Press",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -172,8 +172,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Close Bench Press",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -182,8 +182,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Close Bench Press",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -192,8 +192,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Rows Right",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -202,8 +202,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Rows Right",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -212,8 +212,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Rows Right",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -222,8 +222,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Rows Left",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -232,8 +232,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Rows Left",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -242,8 +242,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Rows Left",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -252,8 +252,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Glute Bridge",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -262,8 +262,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Glute Bridge",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -272,7 +272,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Dumbbell Glute Bridge",
     instance: "Reverse Plank Variation",
-    suggestedReps: 10,
+    suggestedReps: 6,
   },
   {
     name: "Break",
@@ -281,8 +281,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Lying Triceps Extensions",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -291,8 +291,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Lying Triceps Extensions",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -301,8 +301,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Lying Triceps Extensions",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -311,8 +311,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Scotsman Curls",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -321,8 +321,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Scotsman Curls",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -331,8 +331,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Scotsman Curls",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -341,8 +341,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Alternating Biceps Curls",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -351,8 +351,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Alternating Biceps Curls",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -361,8 +361,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Alternating Biceps Curls",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -371,8 +371,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Side Lateral Raises",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -381,8 +381,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Side Lateral Raises",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -391,8 +391,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Side Lateral Raises",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -401,8 +401,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Butterfly Reverse",
     instance: "Set 1",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -411,8 +411,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Butterfly Reverse",
     instance: "Set 2",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -421,8 +421,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Butterfly Reverse",
     instance: "Set 3",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -431,8 +431,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Calf Raises",
     instance: "Right",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -441,8 +441,8 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Calf Raises",
     instance: "Left",
-    suggestedReps: 10,
-    suggestedWeight: 12,
+    suggestedReps: 6,
+    suggestedWeight: 4.5,
   },
   {
     name: "Break",
@@ -451,7 +451,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: "Calf Raises",
     instance: "Both",
-    suggestedReps: 10,
+    timeInSeconds: 40,
   },
   {
     name: "Break",
