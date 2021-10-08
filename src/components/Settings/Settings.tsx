@@ -42,6 +42,8 @@ export default function Settings() {
                 <label htmlFor="soundNo">No</label>
             </form>
 
+            <button onClick={() => localStorage.clear()}>Clear data</button>
+
             <p>This app is in {environment} mode.</p>
         </>
     );
