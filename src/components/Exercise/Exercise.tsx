@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import { ExerciseType } from "../../App";
+import InputRange from "../InputRange/InputRange";
 import Timer from "../Timer/Timer";
 
 const StyledExercise = styled.button`
@@ -53,17 +54,9 @@ export default function Exercise({ children, triggerNext }: Props) {
         </Timer>
       ) : (
         <>
-          <p>
-            {currentReps} reps
-            {currentWeight && (
-              <span> / {currentWeight} kg</span>
-            )}
-          </p>
           <div>Info Card here</div>
-          <p>Amount of completed repetitions:</p>
-          <input type="range" min="0" max="30" value={currentReps} onChange={event => setCurrentReps(Number(event.target.value))}/>
-          <p>Applied weight:</p>
-          <input type="range" min="2" max="27" step="2.5" value={currentWeight} onChange={event => setCurrentWeight(Number(event.target.value))}/>
+          <InputRange label="Amount of completed repetitions:" value={currentReps} onChange={setCurrentReps} unit="reps" />
+          <InputRange label="Applied weight:" value={currentWeight} onChange={setCurrentWeight} unit="kg" step={2.5} min={2} />
         </>
       )}
     </StyledExercise>
