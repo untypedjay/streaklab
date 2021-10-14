@@ -12,6 +12,7 @@ const StyledButton = styled.button`
   border: none;
   padding: 24px;
   border-radius: 8px;
+  background-color: white;
 `;
 
 const StyledValue = styled.p`
