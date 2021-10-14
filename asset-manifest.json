@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/workitout/static/js/main.9d18564c.chunk.js",
-    "main.js.map": "/workitout/static/js/main.9d18564c.chunk.js.map",
+    "main.js": "/workitout/static/js/main.dc1da1f9.chunk.js",
+    "main.js.map": "/workitout/static/js/main.dc1da1f9.chunk.js.map",
     "runtime-main.js": "/workitout/static/js/runtime-main.263d606e.js",
     "runtime-main.js.map": "/workitout/static/js/runtime-main.263d606e.js.map",
     "static/js/2.492edb39.chunk.js": "/workitout/static/js/2.492edb39.chunk.js",
@@ -12,6 +12,6 @@
   "entrypoints": [
     "static/js/runtime-main.263d606e.js",
     "static/js/2.492edb39.chunk.js",
-    "static/js/main.9d18564c.chunk.js"
+    "static/js/main.dc1da1f9.chunk.js"
   ]
 }
