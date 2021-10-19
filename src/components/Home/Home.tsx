@@ -1,5 +1,5 @@
 import { useHistory } from "react-router-dom";
-import { FaCog } from 'react-icons/fa';
+import { FaChartBar, FaCog } from 'react-icons/fa';
 import styled from "styled-components";
 
 const StyledSettingsButton = styled.button`
@@ -21,6 +21,7 @@ export default function Home({ showVisitors = false }: Props) {
   return (
     <>
       <StyledSettingsButton onClick={() => history.push("/settings")}><FaCog /></StyledSettingsButton>
+      <StyledSettingsButton onClick={() => history.push("/statistics")}><FaChartBar /></StyledSettingsButton>
       <h1>WorkItOut</h1>
       <button onClick={() => history.push("/workouts/0")}>
         <h3>Full Body Dumbbell</h3>

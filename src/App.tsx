@@ -1,6 +1,7 @@
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Settings from "./components/Settings/Settings";
+import Statistics from "./components/Statistics/Statistics";
 import Workout from "./components/Workout/Workout";
 import { fullBodyDumbbell } from "./data/workouts/fullBodyDumbbell";
 import useLocalStorage from "./hooks/useLocalStorage";
@@ -15,7 +16,6 @@ export type ExerciseType = {
 
 export default function App() {
   const [workoutData, setWorkoutData] = useLocalStorage('fullbodyDumbbell', [fullBodyDumbbell]);
-  console.log(workoutData)
 
   const addCompletedWorkout = (workout: ExerciseType[]) => {
     setWorkoutData(workoutData.concat([workout]));
@@ -32,6 +32,9 @@ export default function App() {
           <Workout addCompletedWorkout={addCompletedWorkout}>{workoutData[workoutData.length - 1]}</Workout>
         </Route>
         <Route exact path="/settings" component={Settings} />
+        <Route exact path="/statistics" >
+          <Statistics>{workoutData}</Statistics>
+        </Route>
         <Route component={Home} />
       </Switch>
     </HashRouter>
