@@ -3,7 +3,7 @@ import { FaArrowLeft } from "react-icons/fa";
 import { useHistory } from "react-router";
 import styled from "styled-components";
 import useLocalStorage from "../../hooks/useLocalStorage";
-import { getLocalStorageSizeInKB } from "../../utils/common";
+import { downloadFile, getLocalStorageSizeInKB } from "../../utils/common";
 
 const StyledBackButton = styled.button`
     border: none;
@@ -31,6 +31,10 @@ export default function Settings() {
         }
     }
 
+    const createBackup = () => {
+        downloadFile('backup.txt', JSON.stringify(localStorage))
+    }
+
     return (
         <>
             <StyledBackButton onClick={() => history.push('/')}><FaArrowLeft/></StyledBackButton>
@@ -45,6 +49,7 @@ export default function Settings() {
 
             <p>Used storage space: {getLocalStorageSizeInKB()} KB</p>
             <button onClick={() => localStorage.clear()}>Clear data</button>
+            <button onClick={createBackup}>Create backup</button>
 
             <p>This app is in {environment} mode.</p>
         </>
