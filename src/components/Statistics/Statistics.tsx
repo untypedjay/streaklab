@@ -1,7 +1,12 @@
 import { FaArrowLeft } from "react-icons/fa";
 import { useHistory } from "react-router";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import { ExerciseType } from "../../App";
+
+const tableBorder = css`
+    border: 1px solid black;
+    border-collapse: collapse;
+`;
 
 const StyledBackButton = styled.button`
     border: none;
@@ -9,6 +14,17 @@ const StyledBackButton = styled.button`
 
 const StyledTable = styled.table`
     overflow: scroll;
+    ${tableBorder}
+`;
+
+const StyledTd = styled.td`
+    ${tableBorder}
+    padding: 4px;
+    width: 24px;
+`;
+
+const StyledTh = styled.th`
+    ${tableBorder}
 `;
 
 interface Props {
@@ -26,14 +42,29 @@ export default function Statistics({ children }: Props) {
             <StyledTable>
                 <thead>
                     <tr>
-                        {children[0].map((exercise) => <td>{exercise.name}</td>)}
+                        <StyledTd></StyledTd>
+                        {children[0].map((exercise) => {
+                            if (exercise.name !== 'Break') {
+                                return <StyledTh>{exercise.name}</StyledTh>
+                            }
+
+                            return <></>;
+                        }
+                        )}
                     </tr>
                 </thead>
                 <tbody>
                     {children.map((workout, index) =>
                         <tr>
-                            <td>Workout {index + 1}</td>
-                            {workout.map((exercise) => <td>{exercise.suggestedReps} / {exercise.suggestedWeight}</td>)}
+                            <StyledTd>Workout {index + 1}</StyledTd>
+                            {workout.map((exercise) => {
+                                if (exercise.name !== 'Break') {
+                                    return <StyledTd>{exercise.suggestedReps ? exercise.suggestedReps : '-'} / {exercise.suggestedWeight ? exercise.suggestedWeight : '-'}</StyledTd>;
+                                }
+
+                                return <></>
+                            }
+                            )}
                         </tr>
                     )}
                 </tbody>
