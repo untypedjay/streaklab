@@ -81,8 +81,7 @@ export default function Workout({ addCompletedWorkout, children }: Props) {
   };
 
   const completeWorkout = (completedWorkout: ExerciseType[]) => {
-    alert("Congratulations. You finished this workout!");
-    history.push("/");
+    history.push("/success");
     addCompletedWorkout(completedWorkout);
   }
 

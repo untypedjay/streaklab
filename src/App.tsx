@@ -2,6 +2,7 @@ import { HashRouter, Route, Switch } from "react-router-dom";
 import Home from "./components/Home/Home";
 import Settings from "./components/Settings/Settings";
 import Statistics from "./components/Statistics/Statistics";
+import Success from "./components/Success/Success";
 import Workout from "./components/Workout/Workout";
 import { fullBodyDumbbell } from "./data/workouts/fullBodyDumbbell";
 import useLocalStorage from "./hooks/useLocalStorage";
@@ -35,6 +36,7 @@ export default function App() {
         <Route exact path="/statistics" >
           <Statistics>{workoutData}</Statistics>
         </Route>
+        <Route exact path="/success" component={Success} />
         <Route component={Home} />
       </Switch>
     </HashRouter>
