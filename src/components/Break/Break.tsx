@@ -21,6 +21,7 @@ const StyledHeading = styled.h3`
 const StyledNextExercise = styled.p`
   text-transform: uppercase;
   margin-bottom: 0;
+  font-size: 1.5rem;
 `;
 
 interface Props {
@@ -38,9 +39,9 @@ export default function Break({
     <StyledBreak>
       <StyledHeading>Break</StyledHeading>
       <Timer onTimerExpired={() => triggerNext()}>{timeInSeconds}</Timer>
-      <p>Next:</p>
+      <p>Next Exercise:</p>
       <StyledNextExercise>{nextExercise.name}</StyledNextExercise>
-      <p>{nextExercise.instance}</p>
+      <p>{nextExercise.suggestedReps ? nextExercise.suggestedReps : '-'} / {nextExercise.suggestedWeight ? nextExercise.suggestedWeight : '-'}</p>
     </StyledBreak>
   );
 }
