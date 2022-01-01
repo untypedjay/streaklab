@@ -2,6 +2,7 @@
   "name": "workitout",
   "homepage": "https://untypedjay.github.io/workitout/",
   "version": "0.1.0",
+  "description": "Become healthier bit by bit."
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.1",
