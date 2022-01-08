@@ -1,11 +1,11 @@
-import { HashRouter, Route, Switch } from "react-router-dom";
-import Home from "./components/Home/Home";
-import Settings from "./components/Settings/Settings";
-import Statistics from "./components/Statistics/Statistics";
-import Success from "./components/Success/Success";
-import Workout from "./components/Workout/Workout";
-import { fullBodyDumbbell } from "./data/workouts/fullBodyDumbbell";
-import useLocalStorage from "./hooks/useLocalStorage";
+import { HashRouter, Route, Switch } from 'react-router-dom';
+import Home from './components/Home/Home';
+import Settings from './components/Settings/Settings';
+import Statistics from './components/Statistics/Statistics';
+import Success from './components/Success/Success';
+import Workout from './components/Workout/Workout';
+import { fullBodyDumbbell } from './data/workouts/fullBodyDumbbell';
+import useLocalStorage from './hooks/useLocalStorage';
 
 export type ExerciseType = {
   name: string;
@@ -16,11 +16,13 @@ export type ExerciseType = {
 };
 
 export default function App() {
-  const [workoutData, setWorkoutData] = useLocalStorage('fullbodyDumbbell', [fullBodyDumbbell]);
+  const [workoutData, setWorkoutData] = useLocalStorage('fullbodyDumbbell', [
+    fullBodyDumbbell,
+  ]);
 
   const addCompletedWorkout = (workout: ExerciseType[]) => {
     setWorkoutData(workoutData.concat([workout]));
-  }
+  };
 
   return (
     <HashRouter>
@@ -30,10 +32,12 @@ export default function App() {
           <Home showVisitors />
         </Route>
         <Route exact path="/workouts/0">
-          <Workout addCompletedWorkout={addCompletedWorkout}>{workoutData[workoutData.length - 1]}</Workout>
+          <Workout addCompletedWorkout={addCompletedWorkout}>
+            {workoutData[workoutData.length - 1]}
+          </Workout>
         </Route>
         <Route exact path="/settings" component={Settings} />
-        <Route exact path="/statistics" >
+        <Route exact path="/statistics">
           <Statistics>{workoutData}</Statistics>
         </Route>
         <Route exact path="/success" component={Success} />

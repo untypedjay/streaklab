@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import { ExerciseType } from "../../App";
-import Timer from "../Timer/Timer";
+import styled from 'styled-components';
+import { ExerciseType } from '../../App';
+import Timer from '../Timer/Timer';
 
 const StyledBreak = styled.div`
   background-color: #6b82f0;
@@ -41,7 +41,10 @@ export default function Break({
       <Timer onTimerExpired={() => triggerNext()}>{timeInSeconds}</Timer>
       <p>Next Exercise:</p>
       <StyledNextExercise>{nextExercise.name}</StyledNextExercise>
-      <p>{nextExercise.suggestedReps ? nextExercise.suggestedReps : '-'} / {nextExercise.suggestedWeight ? nextExercise.suggestedWeight : '-'}</p>
+      <p>
+        {nextExercise.suggestedReps ? nextExercise.suggestedReps : '-'} /{' '}
+        {nextExercise.suggestedWeight ? nextExercise.suggestedWeight : '-'}
+      </p>
     </StyledBreak>
   );
 }

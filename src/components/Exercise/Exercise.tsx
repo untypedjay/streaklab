@@ -1,8 +1,8 @@
-import { useState } from "react";
-import styled from "styled-components";
-import { ExerciseType } from "../../App";
-import InputRange from "../InputRange/InputRange";
-import Timer from "../Timer/Timer";
+import { useState } from 'react';
+import styled from 'styled-components';
+import { ExerciseType } from '../../App';
+import InputRange from '../InputRange/InputRange';
+import Timer from '../Timer/Timer';
 
 const StyledExercise = styled.button`
   background-color: #fe4042;
@@ -42,7 +42,7 @@ export default function Exercise({ children, triggerNext }: Props) {
     }
 
     triggerNext(exercise);
-  }
+  };
 
   return (
     <StyledExercise onClick={completeExercise}>
@@ -55,8 +55,20 @@ export default function Exercise({ children, triggerNext }: Props) {
       ) : (
         <>
           <div>Info Card here</div>
-          <InputRange label="Amount of completed repetitions:" value={currentReps} onChange={setCurrentReps} unit="reps" />
-          <InputRange label="Applied weight:" value={currentWeight} onChange={setCurrentWeight} unit="kg" step={2.5} min={2} />
+          <InputRange
+            label="Amount of completed repetitions:"
+            value={currentReps}
+            onChange={setCurrentReps}
+            unit="reps"
+          />
+          <InputRange
+            label="Applied weight:"
+            value={currentWeight}
+            onChange={setCurrentWeight}
+            unit="kg"
+            step={2.5}
+            min={2}
+          />
         </>
       )}
     </StyledExercise>

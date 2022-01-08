@@ -1,4 +1,4 @@
-const BASE_ENDPOINT = "https://type.fit/api";
+const BASE_ENDPOINT = 'https://type.fit/api';
 
 export async function fetchQuotes() {
   const response = await fetch(`${BASE_ENDPOINT}/quotes`);

@@ -1,5 +1,5 @@
-import { useEffect, useState } from "react";
-import styled from "styled-components";
+import { useEffect, useState } from 'react';
+import styled from 'styled-components';
 
 const StyledTimer = styled.div`
   font-size: 7rem;

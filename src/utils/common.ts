@@ -9,9 +9,9 @@ export function getLocalStorageSizeInKB(): number {
 
   for (_x in localStorage) {
     if (!localStorage.hasOwnProperty(_x)) {
-        continue;
+      continue;
     }
-    _xLen = ((localStorage[_x].length + _x.length) * 2);
+    _xLen = (localStorage[_x].length + _x.length) * 2;
     _lsTotal += _xLen;
   }
 
@@ -20,7 +20,10 @@ export function getLocalStorageSizeInKB(): number {
 
 export function downloadFile(filename: string, text: string) {
   var element = document.createElement('a');
-  element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(text));
+  element.setAttribute(
+    'href',
+    'data:text/plain;charset=utf-8,' + encodeURIComponent(text)
+  );
   element.setAttribute('download', filename);
 
   element.style.display = 'none';
