@@ -32,7 +32,7 @@ export default function Exercise({ children, triggerNext }: Props) {
   const [currentWeight, setCurrentWeight] = useState(children.suggestedWeight);
 
   const completeExercise = () => {
-    let exercise = children;
+    const exercise = children;
     if (exercise.suggestedReps) {
       exercise.suggestedReps = currentReps;
     }

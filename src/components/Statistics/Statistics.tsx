@@ -44,7 +44,7 @@ export default function Statistics({ children }: Props) {
       <StyledTable>
         <thead>
           <tr>
-            <StyledTd></StyledTd>
+            <StyledTd />
             {children[0].map((exercise) => {
               if (exercise.name !== 'Break') {
                 return <StyledTh>{exercise.name}</StyledTh>;
