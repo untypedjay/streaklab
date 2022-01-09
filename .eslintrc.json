@@ -20,6 +20,10 @@
   },
   "plugins": ["react", "@typescript-eslint"],
   "rules": {
+    "import/extensions": [
+      "error",
+      "never"
+    ],
     "no-unused-vars": "warn"
   }
 }
