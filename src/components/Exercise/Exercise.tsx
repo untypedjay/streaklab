@@ -54,7 +54,6 @@ export default function Exercise({ children, triggerNext }: Props) {
         </Timer>
       ) : (
         <>
-          <div>Info Card here</div>
           <InputRange
             label="Amount of completed repetitions:"
             value={currentReps}

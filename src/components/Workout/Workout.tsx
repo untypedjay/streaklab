@@ -103,16 +103,21 @@ export default function Workout({ addCompletedWorkout, children }: Props) {
       <StyledProgressBar>
         {round(((exerciseNumber + 1) / children.length) * 100, 0)}%
       </StyledProgressBar>
-      <StyledNavigation>
-        <StyledNavigationButton
-          onClick={() => setExerciseNumber(exerciseNumber - 1)}
-        >
-          <FaArrowLeft />
-        </StyledNavigationButton>
-        <StyledNavigationButton onClick={() => triggerNext()}>
-          <FaArrowRight />
-        </StyledNavigationButton>
-      </StyledNavigation>
+      {
+        process.env.NODE_ENV === 'development' &&
+        <StyledNavigation>
+          <StyledNavigationButton
+            onClick={() => setExerciseNumber(exerciseNumber - 1)}
+          >
+            <FaArrowLeft />
+          </StyledNavigationButton>
+          <StyledNavigationButton onClick={() => triggerNext()}>
+            <FaArrowRight />
+          </StyledNavigationButton>
+        </StyledNavigation>
+      }
+
+
       {children[exerciseNumber].name === 'Break' ? (
         <Break
           timeInSeconds={children[exerciseNumber].timeInSeconds || 20}
