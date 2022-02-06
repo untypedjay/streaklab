@@ -12,14 +12,24 @@ export const fullBodyDumbbell: ExerciseType[] = [
     timeInSeconds: 20,
   },
   {
-    name: 'Running on the stand and circling arms (front/back)',
+    name: 'Running on the stand and circling arms forward',
     instance: 'Warm Up',
-    timeInSeconds: 20,
+    timeInSeconds: 10,
   },
   {
-    name: 'Circle Shoulder',
+    name: 'Running on the stand and circling arms backward',
     instance: 'Warm Up',
-    timeInSeconds: 20,
+    timeInSeconds: 10,
+  },
+  {
+    name: 'Circle Shoulder Forward',
+    instance: 'Warm Up',
+    timeInSeconds: 10,
+  },
+  {
+    name: 'Circle Shoulder Backwards',
+    instance: 'Warm Up',
+    timeInSeconds: 10,
   },
   {
     name: 'Turn Body to the Left and Right',
@@ -108,7 +118,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: 'Dumbbell Push Ups',
     instance: 'Set 1',
-    suggestedReps: 6,
+    timeInSeconds: 40,
   },
   {
     name: 'Break',
@@ -117,7 +127,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: 'Dumbbell Push Ups',
     instance: 'Set 2',
-    suggestedReps: 6,
+    timeInSeconds: 40,
   },
   {
     name: 'Break',
@@ -126,7 +136,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: 'Dumbbell Push Ups',
     instance: 'Set 3',
-    suggestedReps: 6,
+    timeInSeconds: 40,
   },
   {
     name: 'Break',
@@ -135,7 +145,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: 'Advanced Military Press',
     instance: 'Set 1',
-    suggestedReps: 6,
+    timeInSeconds: 40,
   },
   {
     name: 'Break',
@@ -144,7 +154,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: 'Advanced Military Press',
     instance: 'Set 2',
-    suggestedReps: 6,
+    timeInSeconds: 40,
   },
   {
     name: 'Break',
@@ -153,7 +163,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: 'Advanced Military Press',
     instance: 'Set 3',
-    suggestedReps: 6,
+    timeInSeconds: 40,
   },
   {
     name: 'Break',
@@ -272,7 +282,7 @@ export const fullBodyDumbbell: ExerciseType[] = [
   {
     name: 'Dumbbell Glute Bridge',
     instance: 'Reverse Plank Variation',
-    suggestedReps: 6,
+    timeInSeconds: 40,
   },
   {
     name: 'Break',
