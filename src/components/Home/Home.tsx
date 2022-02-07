@@ -27,10 +27,13 @@ export default function Home({ showVisitors = false }: Props) {
         <FaChartBar />
       </StyledButton>
       <h1>WorkItOut</h1>
+      <h3>Workouts</h3>
       <button onClick={() => history.push('/workouts/0')}>
         <h3>Full Body Dumbbell</h3>
         <p>60 min</p>
       </button>
+
+      <h3>Challenges</h3>
 
       {showVisitors ? (
         <img
