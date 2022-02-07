@@ -55,13 +55,13 @@ export default function Exercise({ children, triggerNext }: Props) {
       ) : (
         <>
           <InputRange
-            label="Amount of completed repetitions:"
+            label="Repetitions:"
             value={currentReps}
             onChange={setCurrentReps}
             unit="reps"
           />
           <InputRange
-            label="Applied weight:"
+            label="Weight:"
             value={currentWeight}
             onChange={setCurrentWeight}
             unit="kg"

@@ -39,11 +39,10 @@ export default function Break({
     <StyledBreak>
       <StyledHeading>Break</StyledHeading>
       <Timer onTimerExpired={() => triggerNext()}>{timeInSeconds}</Timer>
-      <p>Next Exercise:</p>
+      <p>Next:</p>
       <StyledNextExercise>{nextExercise.name}</StyledNextExercise>
       <p>
-        {nextExercise.suggestedReps ? nextExercise.suggestedReps : '-'} /{' '}
-        {nextExercise.suggestedWeight ? nextExercise.suggestedWeight : '-'}
+        {nextExercise.suggestedWeight && `Prepare weight: ${nextExercise.suggestedWeight}`}
       </p>
     </StyledBreak>
   );
