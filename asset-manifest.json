@@ -1,17 +1,10 @@
 {
   "files": {
-    "main.js": "/workitout/static/js/main.2ac9db18.chunk.js",
-    "main.js.map": "/workitout/static/js/main.2ac9db18.chunk.js.map",
-    "runtime-main.js": "/workitout/static/js/runtime-main.263d606e.js",
-    "runtime-main.js.map": "/workitout/static/js/runtime-main.263d606e.js.map",
-    "static/js/2.b713c423.chunk.js": "/workitout/static/js/2.b713c423.chunk.js",
-    "static/js/2.b713c423.chunk.js.map": "/workitout/static/js/2.b713c423.chunk.js.map",
+    "main.js": "/workitout/static/js/main.be69a646.js",
     "index.html": "/workitout/index.html",
-    "static/js/2.b713c423.chunk.js.LICENSE.txt": "/workitout/static/js/2.b713c423.chunk.js.LICENSE.txt"
+    "main.be69a646.js.map": "/workitout/static/js/main.be69a646.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.263d606e.js",
-    "static/js/2.b713c423.chunk.js",
-    "static/js/main.2ac9db18.chunk.js"
+    "static/js/main.be69a646.js"
   ]
 }
