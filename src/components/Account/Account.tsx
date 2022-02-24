@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { supabase } from '../../supabaseClient'
+import Avatar from '../Avatar/Avatar'
 
 interface Props {
     session: any;
@@ -71,6 +72,14 @@ export default function Account({ session }: Props) {
 
   return (
     <div className="form-widget">
+        <Avatar
+        url={avatar_url}
+        size={150}
+        onUpload={(url: any) => {
+            setAvatarUrl(url)
+            updateProfile({ username, website, avatar_url: url })
+        }}
+        />
       <div>
         <label htmlFor="email">Email</label>
         <input id="email" type="text" value={session.user.email} disabled />
