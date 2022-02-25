@@ -33,35 +33,36 @@ export default function Home({ showVisitors = false }: Props) {
 
   return (
     <>
-      {!session ? <Auth /> : <Account key={session.user.id} session={session} />}
-      <>
-        <StyledButton onClick={() => history.push('/settings')}>
-          <FaCog />
-        </StyledButton>
-        <StyledButton onClick={() => history.push('/statistics')}>
-          <FaChartBar />
-        </StyledButton>
-        <h1>StreakLab</h1>
-        <h3>Workouts</h3>
-        <button onClick={() => history.push('/workouts/0')}>
-          <h3>Full Body Dumbbell</h3>
-          <p>60 min</p>
-        </button>
-
-        <h3>Challenges</h3>
-
-        {showVisitors ? (
-          <img
-            src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg"
-            alt="Visitors"
-          />
-        ) : (
-          <StyledInvisibleImage
-            src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg"
-            alt="Visitors"
-          />
-        )}
-      </>
+      {!session ? <Auth /> :
+        <>
+          <StyledButton onClick={() => history.push('/settings')}>
+            <FaCog />
+          </StyledButton>
+          <StyledButton onClick={() => history.push('/statistics')}>
+            <FaChartBar />
+          </StyledButton>
+          <h1>StreakLab</h1>
+          <h3>Workouts</h3>
+          <button onClick={() => history.push('/workouts/0')}>
+            <h3>Full Body Dumbbell</h3>
+            <p>60 min</p>
+          </button>
+  
+          <h3>Challenges</h3>
+  
+          {showVisitors ? (
+            <img
+              src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg"
+              alt="Visitors"
+            />
+          ) : (
+            <StyledInvisibleImage
+              src="https://profile-counter.glitch.me/great-app-sdkjsd-dev-2021-10-05/count.svg"
+              alt="Visitors"
+            />
+          )}
+        </>
+      }
     </>
   );
 }
