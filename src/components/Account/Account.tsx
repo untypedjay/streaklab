@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react'
-import { supabase } from '../../supabaseClient'
-import Avatar from '../Avatar/Avatar'
+import { useState, useEffect } from 'react';
+import { supabase } from '../../supabaseClient';
+import Avatar from '../Avatar/Avatar';
 
 interface Props {
     session: any;
@@ -9,8 +9,8 @@ interface Props {
 export default function Account({ session }: Props) {
   const [loading, setLoading] = useState(true)
   const [username, setUsername] = useState(null)
-  const [website, setWebsite] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
+  const [startsLeft, setStartsLeft] = useState(false);
+  const [avatarUrl, setAvatarUrl] = useState(null)
 
   useEffect(() => {
     getProfile()
@@ -23,7 +23,7 @@ export default function Account({ session }: Props) {
 
       let { data, error, status } = await supabase
         .from('profiles')
-        .select(`username, website, avatar_url`)
+        .select(`username, avatar_url, starts_left`)
         .eq('id', user.id)
         .single()
 
@@ -33,7 +33,7 @@ export default function Account({ session }: Props) {
 
       if (data) {
         setUsername(data.username)
-        setWebsite(data.website)
+        setStartsLeft(data.starts_left)
         setAvatarUrl(data.avatar_url)
       }
     } catch (error: any) {
@@ -43,7 +43,7 @@ export default function Account({ session }: Props) {
     }
   }
 
-  async function updateProfile({ username, website, avatar_url }: any) {
+  async function updateProfile({ username, avatar_url, starts_left }: any) {
     try {
       setLoading(true)
       const user: any = supabase.auth.user()
@@ -51,8 +51,8 @@ export default function Account({ session }: Props) {
       const updates = {
         id: user.id,
         username,
-        website,
         avatar_url,
+        starts_left,
         updated_at: new Date(),
       }
 
@@ -73,11 +73,11 @@ export default function Account({ session }: Props) {
   return (
     <div className="form-widget">
         <Avatar
-        url={avatar_url}
+        url={avatarUrl}
         size={150}
         onUpload={(url: any) => {
             setAvatarUrl(url)
-            updateProfile({ username, website, avatar_url: url })
+            updateProfile({ username, avatar_url: url, starts_left: startsLeft })
         }}
         />
       <div>
@@ -85,7 +85,7 @@ export default function Account({ session }: Props) {
         <input id="email" type="text" value={session.user.email} disabled />
       </div>
       <div>
-        <label htmlFor="username">Name</label>
+        <label htmlFor="username">Username</label>
         <input
           id="username"
           type="text"
@@ -93,20 +93,12 @@ export default function Account({ session }: Props) {
           onChange={(e: any) => setUsername(e.target.value)}
         />
       </div>
-      <div>
-        <label htmlFor="website">Website</label>
-        <input
-          id="website"
-          type="website"
-          value={website || ''}
-          onChange={(e: any) => setWebsite(e.target.value)}
-        />
-      </div>
+      <p>Next starting side: {startsLeft ? 'left' : 'right'}</p>
 
       <div>
         <button
           className="button block primary"
-          onClick={() => updateProfile({ username, website, avatar_url })}
+          onClick={() => updateProfile({ username, avatar_url: avatarUrl, starts_left: startsLeft })}
           disabled={loading}
         >
           {loading ? 'Loading ...' : 'Update'}
