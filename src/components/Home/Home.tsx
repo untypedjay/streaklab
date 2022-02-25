@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import Auth from '../Auth/Auth';
 import { useEffect, useState } from 'react';
 import { supabase } from '../../supabaseClient';
-import Account from '../Account/Account';
 
 const StyledButton = styled.button`
   display: absolute;

@@ -12,20 +12,15 @@ const StyledBackButton = styled.button`
   border: none;
 `;
 
-export default function Settings() {
+interface Props {
+  session: any;
+}
+
+export default function Settings({ session }: Props) {
   const [isSoundActive, setIsSoundActive] = useLocalStorage('sound', true);
   const [environment, setEnvironment] = useState<string>();
 
   const history = useHistory();
-  const [session, setSession] = useState<any>(null);
-
-  useEffect(() => {
-    setSession(supabase.auth.session());
-
-    supabase.auth.onAuthStateChange((_event, session) => {
-      setSession(session);
-    })
-  }, []);
 
   useEffect(() => {
     if (!process.env.NODE_ENV || process.env.NODE_ENV === 'development') {
@@ -49,42 +44,38 @@ export default function Settings() {
 
   return (
     <>
-    {!session ? <Auth /> :
-      <>
-        <StyledBackButton onClick={() => history.push('/')}>
-          <FaArrowLeft />
-        </StyledBackButton>
-        <h3>Settings</h3>
-        <form>
-          <span>Sound?</span>
-          <input
-            type="radio"
-            id="soundYes"
-            name="sound"
-            value="yes"
-            checked={isSoundActive}
-            onChange={handleChange}
-          />
-          <label htmlFor="soundYes">Yes</label>
-          <input
-            type="radio"
-            id="soundNo"
-            name="sound"
-            value="no"
-            checked={!isSoundActive}
-            onChange={handleChange}
-          />
-          <label htmlFor="soundNo">No</label>
-        </form>
-        <Account key={session.user.id} session={session} />
+      <StyledBackButton onClick={() => history.push('/')}>
+        <FaArrowLeft />
+      </StyledBackButton>
+      <h3>Settings</h3>
+      <form>
+        <span>Sound?</span>
+        <input
+          type="radio"
+          id="soundYes"
+          name="sound"
+          value="yes"
+          checked={isSoundActive}
+          onChange={handleChange}
+        />
+        <label htmlFor="soundYes">Yes</label>
+        <input
+          type="radio"
+          id="soundNo"
+          name="sound"
+          value="no"
+          checked={!isSoundActive}
+          onChange={handleChange}
+        />
+        <label htmlFor="soundNo">No</label>
+      </form>
+      <Account key={session.user.id} session={session} />
 
-        <p>Used storage space: {getLocalStorageSizeInKB()} KB</p>
-        <button onClick={() => localStorage.clear()}>Clear data</button>
-        <button onClick={createBackup}>Create backup</button>
+      <p>Used storage space: {getLocalStorageSizeInKB()} KB</p>
+      <button onClick={() => localStorage.clear()}>Clear data</button>
+      <button onClick={createBackup}>Create backup</button>
 
-        <p>This app is in {environment} mode.</p>
-      </>
-    } 
+      <p>This app is in {environment} mode.</p>
     </>
   );
 }
